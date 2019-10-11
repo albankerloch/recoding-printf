@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/11 12:57:02 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/10 17:25:01 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/10 17:25:05 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+char	*ft_strchr(const char *str, int c)
 {
-	char str[100]="essai";
-	int i;
-	int t;
+	int		i;
+	char	*s;
 
-	t = -1;
-	i = 54;
-	printf("%s %i %% %-i\n", str, t, i);
-
-	return (0);
+	i = 0;
+	s = (char*)str;
+	while (str[i] != '\0')
+	{
+		if (str[i] == (unsigned char)c)
+		{
+			return (&s[i]);
+		}
+		i++;
+	}
+	if (s[i] == (unsigned char)c)
+		return (&s[i]);
+	return (NULL);
 }

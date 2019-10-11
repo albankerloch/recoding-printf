@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/11 12:57:02 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/09 16:22:38 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/11 16:25:07 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libftd.h"
 
-int main()
+void	ft_putstr(char *s)
 {
-	char str[100]="essai";
-	int i;
-	int t;
-
-	t = -1;
-	i = 54;
-	printf("%s %i %% %-i\n", str, t, i);
-
-	return (0);
+	if (s == NULL)
+		return ;
+	write(1, s, ft_strlen(s));
 }

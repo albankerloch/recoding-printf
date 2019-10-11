@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/11 12:57:02 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/11 16:25:15 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+int ft_printf(const char *format, ...)
 {
-	char str[100]="essai";
-	int i;
-	int t;
 
-	t = -1;
-	i = 54;
-	printf("%s %i %% %-i\n", str, t, i);
+
+	(void)format;
+
+	
 
 	return (0);
 }
