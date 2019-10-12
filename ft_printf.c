@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/12 16:23:34 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/12 16:52:25 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,57 @@
 int ft_printf(const char *format, ...)
 {
     char *s;
+    char *var1;
+	size_t i;
+	size_t t;
+	size_t len;
+	size_t	j;
 	va_list ap;
-	
+
+	i = 0;
+	t = 0;
+	while ( i < ft_strlen(format))
+	{
+		if (format[i] == '%')
+			t++;
+		i++;
+	}
 	va_start(ap, format);
-	s = va_arg(ap, char*);
-	ft_putstr((char*)format);
-	printf("\n%s\n", s);
-	s = va_arg(ap, char*);
-	printf("%s\n", s);
+	printf("\n -%zu- \n", t);
+	i = 0;
+	len = 0;
+	while ( i < t)
+	{
+		var1 = va_arg(ap, char*);
+		len = len + ft_strlen(var1);
+		i++;
+	}
 	va_end(ap);
+	printf("\n --%zu-- \n", len);
+    s = NULL;
+    if (!(s = (char*)malloc(ft_strlen(format) + len + 1)))
+        return (0);
+	j = 0;
+	i = 0;
+	while (j < ft_strlen(format) + ft_strlen(var1))
+	{
+		if (format[i] != '%')
+		{
+			s[j] = format[i];
+			i++;
+			j++;
+		}
+		else
+		{
+			while (j < i + ft_strlen(var1))
+			{
+				s[j] = var1[j - i];
+				j++;
+			}
+			i++;
+		}
+	}
+	s[j] = '\0';
+	ft_putstr(s);
 	return (0);
 }

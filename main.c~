@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/12 16:03:45 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/12 16:47:10 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 
 int main()
 {
-	char str[100]="d %s final";
+	char str[100]="d %s milieu %s final";
 	int i;
 	int t;
 	char var1[10]="test";
+	char var2[10]="vent";
 
 	t = -1;
 	i = 54;
