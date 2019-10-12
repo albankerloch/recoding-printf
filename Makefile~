@@ -1,5 +1,9 @@
 #!/bin/sh
-SRCS = ft_printf.c
+SRCS = ft_printf.c \
+	ft_putstr.c \
+	ft_strchr.c \
+	ft_strlcat.c \
+	ft_strlen.c
 OBJS = ${SRCS:.c=.o}
 NAME = libft.a
 HEADER = .
@@ -9,7 +13,7 @@ CFLAGS = -Wall -Wextra -Werror -c -I ${HEADER}
 all : ${NAME}	
 
 clean : 
-		rm -f ${OBJS} ${OBJS_BONUS}
+		rm -f ${OBJS}
 
 fclean : clean
 		 rm -f ${NAME}
@@ -19,9 +23,5 @@ $(NAME) : ${OBJS}
 		  ranlib ${NAME}
 
 re : fclean all
-
-bonus : ${OBJS} ${OBJS_BONUS}
-		ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
-		ranlib ${NAME}
 
 .PHONY : all clean re fclean libft.a

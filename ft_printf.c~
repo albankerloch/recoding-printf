@@ -6,25 +6,39 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/11 16:23:00 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/12 14:34:04 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
-void    ft_putstr(char *s);
-
-
-
-int ft_printf(const char *format, ...)
+int ft_printf(const char *format, const char *var1)
 {
+    char *s;
+	size_t i;
+	size_t	j;
 
-
-	(void)format;
-
-	
-
+    s = NULL;
+    if (!(s = (char*)malloc(ft_strlen(format) + ft_strlen(var1) + 1)))
+        return (s);
+	j = 0;
+	i = 0;
+	while (j < ft_strlen(format) + ft_strlen(var1))
+	{
+		if (format[t] != '%')
+		{
+			s[j] = format[i];
+			i++;
+			j++;
+		}
+		else
+		{
+			while (j < i + ft_strlen(var1))
+			{
+				s[j] = var1[i - j];
+				j++;
+			}
+	}
+	s[j] = '\0';
 	return (0);
 }

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/12 16:03:45 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/07 18:22:15 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/12 13:48:48 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-
-int main()
+size_t	ft_strinsert(char *dest, const char *src, size_t i)
 {
-	char str[100]="d %s final";
-	int i;
-	int t;
-	char var1[10]="test";
+	size_t	j;
 
-	t = -1;
-	i = 54;
-//	printf("%s %i %% %-i\n", str, t, i);
-	ft_printf(str, var1);
-
-	return (0);
+	j = 0;
+	while (src[j] != 0)
+	{
+		dest[j + i] = src[j];
+		j++;
+	}
+	dest[j + i] = '\0';
+	return (j + i);
 }
