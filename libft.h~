@@ -6,7 +6,7 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:49:01 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/12 13:55:28 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/12 14:37:49 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 #include <stdarg.h>
 

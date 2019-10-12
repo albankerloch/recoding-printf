@@ -6,7 +6,7 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:49:01 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/12 14:37:49 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/12 16:13:10 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef	struct		s_list
 }					t_list;
 
 size_t				ft_strlen(const char *str);
-int					ft_printf(const char *format, const char *var1);
+int					ft_printf(const char *format, ...);
 void    			ft_putstr(char *s);
 char			   	*ft_strchr(const char *str, int c);
 size_t				ft_strinsert(char *dest, const char *src, size_t size);
