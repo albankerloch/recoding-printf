@@ -6,7 +6,7 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:49:04 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 16:37:02 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:25:13 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ static void	ft_wbase(long n, char *base, char *s, size_t *t)
 	}
 }
 
-void	ft_putnbr_base(char *s, int nbr, char *base, size_t *t)
+void	ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 {
-	long	l;
+	long long	l;
 
 	l = nbr;
 	if (nbr < 0)

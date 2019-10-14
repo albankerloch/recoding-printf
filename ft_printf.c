@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 17:22:49 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:27:55 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,8 +136,11 @@ static void ft_write_p(char *s, va_list ap, size_t *t)
    void *var1;
 
 	var1 = va_arg(ap, void*);
-	printf("\n -%p- %ld %zu %zu\n", var1, (long)var1, t[1], t[0]);
-    ft_putnbr_base(s, (long)var1, "0123456789", t);
+//	printf("\n -%p- %ld %zu %zu\n", var1, (long)var1, t[1], t[0]);
+	s[t[1]] = '0';
+	s[t[1] + 1] = 'x';
+	t[1] = t[1] + 1;
+	ft_putnbr_base(s, (long)var1, "0123456789abcdef", t);
 }
 
 
