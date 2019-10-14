@@ -6,7 +6,7 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 13:49:01 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/12 16:13:10 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 12:12:25 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					 ft_isdigit(int i);
+int			        ft_atoi(const char *str);
 size_t				ft_strlen(const char *str);
 int					ft_printf(const char *format, ...);
 void    			ft_putstr(char *s);
