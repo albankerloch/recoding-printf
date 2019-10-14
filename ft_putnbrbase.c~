@@ -1,0 +1,113 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/16 08:49:04 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/07/17 09:59:31 by akerloc-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int		ft_atoi_base(char *str, char *base);
+int		ft_nbbase(char c, char *base);
+int		ft_testbase(char *base);
+int		ft_isspace(char c);
+int		ft_strlen(char *str);
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	int				i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0' && j < nb)
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
+}
+
+int		ft_count(int nbr, char *base)
+{
+	int		j;
+	int		t;
+
+	j = 1;
+	t = nbr;
+	if (nbr < 0)
+	{
+		t = -t;
+		j++;
+	}
+	while (t > ft_strlen(base))
+	{
+		t = t / ft_strlen(base);
+		j++;
+	}
+	return (j);
+}
+
+void	ft_wbase(long n, int b, char *base, char **s)
+{
+	long c;
+	long d;
+	char *e;
+
+	if (n >= b)
+	{
+		c = n / b;
+		d = n % b;
+		ft_wbase(c, b, base, s);
+		e = &base[d];
+		*s = ft_strncat(*s, e, 1);
+	}
+	else
+	{
+		e = &base[n];
+		*s = ft_strncat(*s, e, 1);
+	}
+}
+
+char	*ft_putnbr_base(int nbr, char *base)
+{
+	long	t;
+	char	*s;
+
+	s = NULL;
+	if (!(s = (char*)malloc(sizeof(char) * (ft_count(nbr, base) + 1))))
+		return (s);
+	t = nbr;
+	if (nbr < 0)
+	{
+		t = -t;
+		s[0] = '-';
+		s[1] = '\0';
+	}
+	else
+		s[0] = '\0';
+	ft_wbase(t, ft_strlen(base), base, &s);
+	return (s);
+}
+
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+{
+	int		n;
+	char	*s;
+
+	if (ft_testbase(base_from) == 0 || ft_testbase(base_to) == 0)
+		return (0);
+	n = ft_atoi_base(nbr, base_from);
+	s = ft_putnbr_base(n, base_to);
+	return (s);
+}

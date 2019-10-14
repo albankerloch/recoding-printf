@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 15:24:13 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 16:00:58 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,17 +104,51 @@ static int ft_checktaille_max(va_list ap, const char *format, size_t *i)
     }
     return (taille_max);
 }
-/*
-static void ft_write(char *s, va_list ap, const char *format, size_t *t)
+
+static void ft_write_s(char *s, va_list ap, size_t *t)
 {
-	size_t
+    char *var1;
+	size_t k;
 
+	var1 = va_arg(ap, char*);
+//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
+	k = 0;
+	while (k < ft_strlen(var1))
+	{
+		s[t[1]] = var1[k];
+		t[1]++;
+		k++;
+	}
+}
 
-	}*/
+static void ft_write_d(char *s, va_list ap, size_t *t)
+{
+    char *var1;
+	size_t k;
+
+	var1 = va_arg(ap, char*);
+//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
+	k = 0;
+	while (k < ft_strlen(var1))
+	{
+		s[t[1]] = var1[k];
+		t[1]++;
+		k++;
+	}
+}
+
+static void ft_write_c(char *s, va_list ap, size_t *t)
+{
+    char var1;
+
+	var1 = (char)va_arg(ap, int);
+	s[t[1]] = var1;
+	t[1]++;
+}
 
 static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
 {
-    char *var1;
+
 	char option;
 	int taille_min;
 	int taille_max;
@@ -125,20 +159,23 @@ static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
 	taille_min = ft_checktaille_min(ap, format, t);
 //	printf("\n %d | %zu\n", taille_min, i);
 	taille_max = ft_checktaille_max(ap, format, t);
+//	printf("\n %d | %zu\n", taille_mqx, i);
 	conv = format[t[0] + 1];
+//	printf("\n %c %c %zu  %zu\n", option, conv, t[0], t[1]);
 	t[0] = t[0] + 2;
-/*	if (conv == 's' && option == 'm')
-	ft_write(s, ap, format, t);*/
-	if (s[0] == 'a')
-		var1 = va_arg(ap, char*);
-
+    if (s[0] == 'a')
+        conv = 'a';
+	if (conv == 's' && option == 'n')
+		ft_write_s(s, ap, t);
+	if (conv == 'c' && option == 'n')
+		ft_write_c(s, ap, t);
+	if (conv == 'd' && option == 'n')
+		ft_write_c(s, ap, t);
 }
 
 static void ft_fill(char *s, va_list ap, const char *format)
 {
-	size_t k;
 	size_t t[2];
-    char *var1;
 
 	t[0] = 0;
 	t[1] = 0;
@@ -161,15 +198,7 @@ static void ft_fill(char *s, va_list ap, const char *format)
 			else
 			{
 				ft_parsing(s, ap, format, t);
-				var1 = va_arg(ap, char*);
-//				printf("\n -%s- %zu %zu %zu\n", var1, j, i, j - i);
-				k = 0;
-				while (k < ft_strlen(var1))
-				{
-					s[t[1]] = var1[k];
-					t[1]++;
-					k++;
-				}
+
 			}
 		}
 	}
@@ -188,7 +217,7 @@ int ft_printf(const char *format, ...)
 	{
 		va_start(ap, format);
 		//len = ft_size(ap, format, t);
-		len = 50;
+		len = 1000;
 		va_end(ap);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 15:42:31 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 16:24:51 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,13 +105,13 @@ static int ft_checktaille_max(va_list ap, const char *format, size_t *i)
     return (taille_max);
 }
 
-static void ft_write_n(char *s, va_list ap, size_t *t)
+static void ft_write_s(char *s, va_list ap, size_t *t)
 {
     char *var1;
 	size_t k;
 
 	var1 = va_arg(ap, char*);
-	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
+//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
 	k = 0;
 	while (k < ft_strlen(var1))
 	{
@@ -119,8 +119,24 @@ static void ft_write_n(char *s, va_list ap, size_t *t)
 		t[1]++;
 		k++;
 	}
-    if (s[0] == 'a')
-        (void)k;
+}
+
+static void ft_write_d(char *s, va_list ap, size_t *t)
+{
+   int var1;
+
+	var1 = va_arg(ap, int);
+//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
+	ft_putnbr_base(s, var1, "0123456789", t);
+}
+
+static void ft_write_c(char *s, va_list ap, size_t *t)
+{
+    char var1;
+
+	var1 = (char)va_arg(ap, int);
+	s[t[1]] = var1;
+	t[1]++;
 }
 
 static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
@@ -138,12 +154,16 @@ static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
 	taille_max = ft_checktaille_max(ap, format, t);
 //	printf("\n %d | %zu\n", taille_mqx, i);
 	conv = format[t[0] + 1];
-	printf("\n %c %c %zu  %zu\n", option, conv, t[0], t[1]);
+//	printf("\n %c %c %zu  %zu\n", option, conv, t[0], t[1]);
 	t[0] = t[0] + 2;
     if (s[0] == 'a')
         conv = 'a';
 	if (conv == 's' && option == 'n')
-		ft_write_n(s, ap, t);
+		ft_write_s(s, ap, t);
+	if (conv == 'c' && option == 'n')
+		ft_write_c(s, ap, t);
+	if (conv == 'd' && option == 'n')
+		ft_write_d(s, ap, t);
 }
 
 static void ft_fill(char *s, va_list ap, const char *format)
