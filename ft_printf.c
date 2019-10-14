@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 15:02:40 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 15:24:13 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,66 +104,76 @@ static int ft_checktaille_max(va_list ap, const char *format, size_t *i)
     }
     return (taille_max);
 }
+/*
+static void ft_write(char *s, va_list ap, const char *format, size_t *t)
+{
+	size_t
 
-static size_t ft_parsing(char *s, va_list ap, const char *format, size_t i)
+
+	}*/
+
+static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
 {
     char *var1;
 	char option;
 	int taille_min;
 	int taille_max;
+	char conv;
 
-	option = ft_checkflag1(format, &i);
+	option = ft_checkflag1(format, t);
 //	printf("\n %c %zu\n", option, i);
-	taille_min = ft_checktaille_min(ap, format, &i);
+	taille_min = ft_checktaille_min(ap, format, t);
 //	printf("\n %d | %zu\n", taille_min, i);
-	taille_max = ft_checktaille_max(ap, format, &i);
+	taille_max = ft_checktaille_max(ap, format, t);
+	conv = format[t[0] + 1];
+	t[0] = t[0] + 2;
+/*	if (conv == 's' && option == 'm')
+	ft_write(s, ap, format, t);*/
 	if (s[0] == 'a')
 		var1 = va_arg(ap, char*);
-	i = i + 2;
-	return (i);
+
 }
 
 static void ft_fill(char *s, va_list ap, const char *format)
 {
 	size_t k;
-	size_t j;
-	size_t i;
+	size_t t[2];
     char *var1;
 
-	j = 0;
-	i = 0;
-	while (i < ft_strlen(format))
+	t[0] = 0;
+	t[1] = 0;
+	while (t[0] < ft_strlen(format))
 	{
-		if (format[i] != '%')
+		if (format[t[0]] != '%')
 		{
-			s[j] = format[i];
-			i++;
-			j++;
+			s[t[1]] = format[t[0]];
+			t[0]++;
+			t[1]++;
 		}
 		else
 		{
-			if (format[i + 1] == '%')
+			if (format[t[0] + 1] == '%')
 			{
-				s[j] = '%';
-				j++;
-				i = i + 2;
+				s[t[1]] = '%';
+				t[1]++;
+				t[0] = t[0] + 2;
 			}
 			else
 			{
-				i = ft_parsing(s, ap, format, i);
+				ft_parsing(s, ap, format, t);
 				var1 = va_arg(ap, char*);
 //				printf("\n -%s- %zu %zu %zu\n", var1, j, i, j - i);
 				k = 0;
 				while (k < ft_strlen(var1))
 				{
-					s[j] = var1[k];
-					j++;
+					s[t[1]] = var1[k];
+					t[1]++;
 					k++;
 				}
 			}
 		}
 	}
-	s[j] = '\0';
+	s[t[1]] = '\0';
 }
 
 int ft_printf(const char *format, ...)
