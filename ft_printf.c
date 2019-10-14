@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 16:24:51 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:22:49 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,15 +121,6 @@ static void ft_write_s(char *s, va_list ap, size_t *t)
 	}
 }
 
-static void ft_write_d(char *s, va_list ap, size_t *t)
-{
-   int var1;
-
-	var1 = va_arg(ap, int);
-//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
-	ft_putnbr_base(s, var1, "0123456789", t);
-}
-
 static void ft_write_c(char *s, va_list ap, size_t *t)
 {
     char var1;
@@ -137,6 +128,31 @@ static void ft_write_c(char *s, va_list ap, size_t *t)
 	var1 = (char)va_arg(ap, int);
 	s[t[1]] = var1;
 	t[1]++;
+}
+
+
+static void ft_write_p(char *s, va_list ap, size_t *t)
+{
+   void *var1;
+
+	var1 = va_arg(ap, void*);
+	printf("\n -%p- %ld %zu %zu\n", var1, (long)var1, t[1], t[0]);
+    ft_putnbr_base(s, (long)var1, "0123456789", t);
+}
+
+
+static void ft_write_d(char *s, va_list ap, size_t *t, char conv)
+{
+   int var1;
+
+	var1 = va_arg(ap, int);
+//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
+	if ( conv == 'i' || conv == 'd' || conv == 'u')
+		ft_putnbr_base(s, var1, "0123456789", t);
+	if ( conv == 'x')
+		ft_putnbr_base(s, var1, "0123456789abcdef", t);
+	if ( conv == 'X')
+		ft_putnbr_base(s, var1, "0123456789ABCDEF", t);
 }
 
 static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
@@ -156,14 +172,14 @@ static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
 	conv = format[t[0] + 1];
 //	printf("\n %c %c %zu  %zu\n", option, conv, t[0], t[1]);
 	t[0] = t[0] + 2;
-    if (s[0] == 'a')
-        conv = 'a';
 	if (conv == 's' && option == 'n')
 		ft_write_s(s, ap, t);
-	if (conv == 'c' && option == 'n')
+	else if (conv == 'c' && option == 'n')
 		ft_write_c(s, ap, t);
-	if (conv == 'd' && option == 'n')
-		ft_write_d(s, ap, t);
+	else if (conv == 'p' && option == 'n')
+		ft_write_p(s, ap, t);
+	else if (option == 'n')
+		ft_write_d(s, ap, t, conv);
 }
 
 static void ft_fill(char *s, va_list ap, const char *format)
