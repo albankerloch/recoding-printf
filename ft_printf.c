@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 17:27:55 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/14 19:39:38 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,32 +53,32 @@ static size_t ft_size(va_list ap, const char *format, size_t t)
 	return (len);
 }
 */
-static char ft_checkflag1(const char *format, size_t *i)
+static size_t ft_checkflag1(const char *format, size_t *i)
 {
-	char option;
+	size_t option;
 
-	option = 'n';
+	option = 0;
 	if (format[*i + 1] == '0' | format[*i + 1] == '-')
 	{
-		option = format[*i + 1];
+		option = (format[*i + 1] == '-' ? 1 : 2);
 		*i = *i + 1;
 		if (format[*i + 1] == '0' | format[*i + 1] == '-')
 		{
-			option = '-';
+			option = 1;
 			*i = *i + 1;
 		}
 	}
 	return (option);
 }
 
-static int ft_checktaille_min(va_list ap, const char *format, size_t *i)
+static size_t ft_checktaille_min(va_list ap, const char *format, size_t *i)
 {
-    int var1;
+    size_t var1;
 	size_t j;
 
 	if (format[*i + 1] == '*')
 	{
-		var1 = va_arg(ap, int);
+		var1 = (size_t)va_arg(ap, int);
 		*i = *i + 1;
 		return (var1);
 	}
@@ -92,9 +92,9 @@ static int ft_checktaille_min(va_list ap, const char *format, size_t *i)
 	return (0);
 }
 
-static int ft_checktaille_max(va_list ap, const char *format, size_t *i)
+static size_t ft_checktaille_max(va_list ap, const char *format, size_t *i)
 {
-	int taille_max;
+	size_t taille_max;
 
 	taille_max = -1;
 	if (format[*i + 1] == '.')
@@ -109,25 +109,67 @@ static void ft_write_s(char *s, va_list ap, size_t *t)
 {
     char *var1;
 	size_t k;
+	size_t m;
 
 	var1 = va_arg(ap, char*);
-//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
 	k = 0;
-	while (k < ft_strlen(var1))
+	m = t[3] < ft_strlen(var1) ? t[3] : ft_strlen(var1);
+	printf("\n -%s- %zu %zu %zu %zu\n", var1, t[4], t[2], t[3], t[2] - m);
+	if (t[2] > m && t[4] != 1)
+	{
+		while (k < t[2] - m)
+		{
+			k++;
+			s[t[1]] = (t[4] == 2 ? '0' : ' ');
+			t[1]++;
+		}
+	}
+	k = 0;
+	while (k < ft_strlen(var1) && k < t[3])
 	{
 		s[t[1]] = var1[k];
 		t[1]++;
 		k++;
+	}
+	k = 0;
+	if (t[2] > m && t[4] == 1)
+	{
+		while (k < t[2] - m)
+		{
+			k++;
+			s[t[1]] = ' ';
+			t[1]++;
+		}
 	}
 }
 
 static void ft_write_c(char *s, va_list ap, size_t *t)
 {
     char var1;
+	size_t k;
 
 	var1 = (char)va_arg(ap, int);
+	k = 1;
+	if (t[2] > 0 && t[4] != 1)
+	{
+		while (k < t[2])
+		{
+			k++;
+			s[t[1]] = (t[4] == 2 ? '0' : ' ');
+			t[1]++;
+		}
+	}
 	s[t[1]] = var1;
 	t[1]++;
+	if (t[2] > 0 && t[4] == 1)
+    {
+		while (k < t[2])
+		{
+			k++;
+			s[t[1]] = ' ';
+			t[1]++;
+		}
+	}
 }
 
 
@@ -160,34 +202,30 @@ static void ft_write_d(char *s, va_list ap, size_t *t, char conv)
 
 static void ft_parsing(char *s, va_list ap, const char *format, size_t *t)
 {
-
-	char option;
-	int taille_min;
-	int taille_max;
 	char conv;
 
-	option = ft_checkflag1(format, t);
+	t[4] = ft_checkflag1(format, t);
 //	printf("\n %c %zu\n", option, i);
-	taille_min = ft_checktaille_min(ap, format, t);
-//	printf("\n %d | %zu\n", taille_min, i);
-	taille_max = ft_checktaille_max(ap, format, t);
-//	printf("\n %d | %zu\n", taille_mqx, i);
+	t[2] = ft_checktaille_min(ap, format, t);
+//	printf("\n %zu | %zu\n", t[2], t[0]);
+	t[3] = ft_checktaille_max(ap, format, t);
+//	printf("\n %zu | %zu\n", t[3], t[0]);
 	conv = format[t[0] + 1];
 //	printf("\n %c %c %zu  %zu\n", option, conv, t[0], t[1]);
 	t[0] = t[0] + 2;
-	if (conv == 's' && option == 'n')
+	if (conv == 's')
 		ft_write_s(s, ap, t);
-	else if (conv == 'c' && option == 'n')
+	else if (conv == 'c')
 		ft_write_c(s, ap, t);
-	else if (conv == 'p' && option == 'n')
+	else if (conv == 'p')
 		ft_write_p(s, ap, t);
-	else if (option == 'n')
+	else
 		ft_write_d(s, ap, t, conv);
 }
 
 static void ft_fill(char *s, va_list ap, const char *format)
 {
-	size_t t[2];
+	size_t t[4];
 
 	t[0] = 0;
 	t[1] = 0;
