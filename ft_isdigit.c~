@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 16:22:38 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/11 16:22:27 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/07 16:45:51 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/07 16:46:17 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_isdigit(int i)
 {
-	if (s == NULL)
-		return ;
-	write(fd, s, ft_strlen(s));
+	if (i >= 48 && i <= 57)
+		return (i);
+	else
+		return (0);
 }

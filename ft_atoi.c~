@@ -6,11 +6,11 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:51 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 15:12:19 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/07 17:41:11 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprint.h"
+#include "libft.h"
 
 static int	ft_isspace(char c)
 {

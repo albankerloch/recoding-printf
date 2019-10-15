@@ -6,11 +6,11 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:45:51 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/07 16:46:17 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:13:21 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprint.h"
 
 int	ft_isdigit(int i)
 {

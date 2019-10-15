@@ -1,14 +1,15 @@
 #!/bin/sh
 SRCS = ft_printf.c \
-	ft_putstr.c \
-	ft_strchr.c \
-	ft_strdup.c \
-	ft_atoi.c \
+	ft_size.c \
 	ft_putnbr_base.c \
+	ft_count.c \
+	ft_check.c \
+	ft_atoi.c \
+	ft_putstr.c \
 	ft_isdigit.c \
 	ft_strlen.c
 OBJS = ${SRCS:.c=.o}
-NAME = libft.a
+NAME = libftprintf.a
 HEADER = .
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -c -I ${HEADER} 

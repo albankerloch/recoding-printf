@@ -6,50 +6,13 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:49:04 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 12:40:40 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 17:05:33 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-static void	ft_strncat(char *dest, char *src, unsigned int nb, size_t *t)
-{
-	int				i;
-	unsigned int	j;
+#include "libftprint.h"
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0' && j < nb)
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
-}
-*/
-size_t		ft_count_yc_signe(long nbr, char *base)
-{
-	size_t	j;
-	size_t		t;
-
-	j = 1;
-	t = nbr;
-	if (nbr < 0)
-	{
-		t = -t;
-		j++;
-	}
-	while (t > ft_strlen(base))
-	{
-		t = t / ft_strlen(base);
-		j++;
-	}
-	return (j);
-}
-
-size_t		ft_count_hors_signe(long nbr, char *base)
+size_t			ft_count_hors_signe(long nbr, char *base)
 {
 	size_t		j;
 	size_t		t;
@@ -68,7 +31,7 @@ size_t		ft_count_hors_signe(long nbr, char *base)
 	return (j);
 }
 
-static void	ft_wbase(long n, char *base, char *s, size_t *t)
+static void		ft_wbase(long n, char *base, char *s, size_t *t)
 {
 	long c;
 	long d;
@@ -93,54 +56,55 @@ static void	ft_wbase(long n, char *base, char *s, size_t *t)
 	}
 }
 
-void	ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
+void			ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 {
 	long long	l;
-	size_t k;
 	size_t m;
 
 	l = nbr;
 	m = t[2] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
 	m = nbr < 0 ? m + 1 : m;
 //	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
-    k = 0;
     if (t[2] > m && t[4] == 2)
-    {
-        while (k < t[2] - m)
-        {
-            k++;
-            s[t[1]] = ' ';
-            t[1]++;
-		}
-    }
+		ft_fill_caract(s, t[2] - m, t, ' ');
 	if (nbr < 0)
 	{
 		l = -l;
 		s[t[1]] = '-';
 		t[1] = t[1] + 1;
 	}
-    k = 0;
     if (t[3] > ft_count_hors_signe(nbr, base) && t[4] != 0)
-    {
-        while (k < t[3] - ft_count_hors_signe(nbr, base))
-        {
-            k++;
-            s[t[1]] = '0';
-            t[1]++;
-		}
-    }
+		ft_fill_caract(s, t[3] - ft_count_hors_signe(nbr, base), t, '0');
 	ft_wbase(l, base, s, t);
 	m = t[3] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
 	m = nbr < 0 ? m + 1 : m;
 //	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
-    k = 0;
     if (t[2] > m && t[4] == 1)
-    {
-        while (k < t[2] - m)
-        {
-            k++;
-            s[t[1]] = ' ';
-            t[1]++;
-		}
-    }
+		ft_fill_caract(s, t[2] - m, t, '0');
+}
+
+void			ft_countnbr_base(long nbr, char *base, size_t *t)
+{
+	long long	l;
+	size_t m;
+
+	l = nbr;
+	m = t[2] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
+	m = nbr < 0 ? m + 1 : m;
+//	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
+    if (t[2] > m && t[4] == 2)
+		t[1] = t[1] + t[2] - m;
+	if (nbr < 0)
+	{
+		l = -l;
+		t[1] = t[1] + 1;
+	}
+    if (t[3] > ft_count_hors_signe(nbr, base) && t[4] != 0)
+		t[1] = t[1] + t[3] - ft_count_hors_signe(nbr, base);
+	t[1] = t[1] + ft_count_hors_signe(nbr, base);
+	m = t[3] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
+	m = nbr < 0 ? m + 1 : m;
+//	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
+    if (t[2] > m && t[4] == 1)
+		t[1] = t[1] + t[2] - m;
 }

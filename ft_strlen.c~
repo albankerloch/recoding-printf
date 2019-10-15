@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/12 16:23:34 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/07/08 19:55:49 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/07 16:39:58 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_printf(const char *format, ...)
+size_t	ft_strlen(const char *str)
 {
-    char *s;
-	va_list ap;
-	
-	va_start(ap, format);
-	s = va_arg(ap, char*);
-	ft_putstr((char*)format);
-	printf("\n%s\n", s);
-	s = va_arg(ap, char*);
-	printf("%s\n", s);
-	va_end(ap);
-	return (0);
+	int		a;
+
+	a = 0;
+	while (str[a] != '\0')
+	{
+		a++;
+	}
+	return (a);
 }
