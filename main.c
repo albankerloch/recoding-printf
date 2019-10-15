@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 19:06:36 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 12:22:48 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	char str[100]="%-0*.*s %% fin\n";
+	char str[100]="%0*.*d %% fin\n";
 //	char str[100]="d%1.3s %% fin\n";
 	int i;
 	int i2;
@@ -33,7 +33,7 @@ int main()
 
 	t = -1;
 	i = 10;
-	i2 = 20;
+	i2 = 4;
 	x = 42;
 	c = 'b';
 	d = -54;
@@ -41,8 +41,8 @@ int main()
 	p = &u;
 
 //	printf("%s %i %% %-i\n", str, t, i);
-	ft_printf(str, i, i2, var2);
-	printf(str, i, i2, var2);
+	ft_printf(str, i, i2, d);
+	printf(str, i, i2, d);
 //	ft_printf(str, var1);
 //	printf(str, var1);
 

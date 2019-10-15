@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/14 19:39:38 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 12:20:33 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,18 +185,18 @@ static void ft_write_p(char *s, va_list ap, size_t *t)
 	ft_putnbr_base(s, (long)var1, "0123456789abcdef", t);
 }
 
-
 static void ft_write_d(char *s, va_list ap, size_t *t, char conv)
 {
-   int var1;
+	int var1;
 
 	var1 = va_arg(ap, int);
+//	printf("\n %d %zu %zu %zu %zu \n", var1, t[1], t[0], ft_count_yc_signe(var1, "0123456789"), ft_count_hors_signe(var1, "0123456789"));
 //	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
-	if ( conv == 'i' || conv == 'd' || conv == 'u')
+	if (conv == 'i' || conv == 'd' || conv == 'u')
 		ft_putnbr_base(s, var1, "0123456789", t);
-	if ( conv == 'x')
+	if (conv == 'x')
 		ft_putnbr_base(s, var1, "0123456789abcdef", t);
-	if ( conv == 'X')
+	if (conv == 'X')
 		ft_putnbr_base(s, var1, "0123456789ABCDEF", t);
 }
 
