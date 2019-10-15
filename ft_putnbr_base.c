@@ -6,7 +6,7 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:49:04 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 12:22:23 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 12:40:40 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,22 @@ void	ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 {
 	long long	l;
 	size_t k;
+	size_t m;
 
 	l = nbr;
+	m = t[2] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
+	m = nbr < 0 ? m + 1 : m;
+//	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
+    k = 0;
+    if (t[2] > m && t[4] == 2)
+    {
+        while (k < t[2] - m)
+        {
+            k++;
+            s[t[1]] = ' ';
+            t[1]++;
+		}
+    }
 	if (nbr < 0)
 	{
 		l = -l;
@@ -116,4 +130,17 @@ void	ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 		}
     }
 	ft_wbase(l, base, s, t);
+	m = t[3] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
+	m = nbr < 0 ? m + 1 : m;
+//	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
+    k = 0;
+    if (t[2] > m && t[4] == 1)
+    {
+        while (k < t[2] - m)
+        {
+            k++;
+            s[t[1]] = ' ';
+            t[1]++;
+		}
+    }
 }
