@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 12:20:33 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 13:20:10 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,7 @@ static size_t ft_count(const char *format)
 //	printf("\n --%zu-- \n", t);
 	return (t);
 }
-/*
-static size_t ft_size(va_list ap, const char *format, size_t t)
-{
-	size_t len;
-	size_t i;
-    char *var1;
 
-	len = 0;
-	i = 0;
-	while (i < t)
-	{
-		(void)format;
-		var1 = va_arg(ap, char*);
-		len = len + ft_strlen(var1);
-		i++;
-	}
-//	printf("\n --%zu-- \n", len);
-	return (len);
-}
-*/
 static size_t ft_checkflag1(const char *format, size_t *i)
 {
 	size_t option;
@@ -171,7 +152,6 @@ static void ft_write_c(char *s, va_list ap, size_t *t)
 		}
 	}
 }
-
 
 static void ft_write_p(char *s, va_list ap, size_t *t)
 {
