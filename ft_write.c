@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 16:26:57 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 17:28:46 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void		ft_write_s(char *s, va_list ap, size_t *t)
 	size_t	m;
 
 	var1 = va_arg(ap, char*);
-	k = 0;
 	m = t[3] < ft_strlen(var1) ? t[3] : ft_strlen(var1);
 //	printf("\n -%s- %zu %zu %zu %zu\n", var1, t[4], t[2], t[3], t[2] - m);
 	if (t[2] > m && t[4] != 1)
@@ -44,7 +43,6 @@ void		ft_write_s(char *s, va_list ap, size_t *t)
 		t[1]++;
 		k++;
 	}
-	k = 0;
 	if (t[2] > m && t[4] == 1)
 		ft_fill_caract(s, t[2] - m, t, ' ');
 }

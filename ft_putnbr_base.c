@@ -6,7 +6,7 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:49:04 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 17:05:33 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 18:47:40 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,12 @@ void			ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 	size_t m;
 
 	l = nbr;
-	m = t[2] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
+	m = t[3] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
 	m = nbr < 0 ? m + 1 : m;
-//	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
-    if (t[2] > m && t[4] == 2)
+	printf("\n%zu %zu %zu %zu %zu\n", t[4], t[2], t[3], m, ft_count_hors_signe(nbr, base));
+	if (t[2] > m && t[4] == 0)
+		ft_fill_caract(s, t[2] - m, t, ' ');
+	if (t[2] > m && t[4] == 2 && t[3] != 0)
 		ft_fill_caract(s, t[2] - m, t, ' ');
 	if (nbr < 0)
 	{
@@ -73,14 +75,14 @@ void			ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 		s[t[1]] = '-';
 		t[1] = t[1] + 1;
 	}
-    if (t[3] > ft_count_hors_signe(nbr, base) && t[4] != 0)
+    if (t[3] > ft_count_hors_signe(nbr, base))
 		ft_fill_caract(s, t[3] - ft_count_hors_signe(nbr, base), t, '0');
 	ft_wbase(l, base, s, t);
 	m = t[3] > ft_count_hors_signe(nbr, base) ? t[3] : ft_count_hors_signe(nbr, base);
 	m = nbr < 0 ? m + 1 : m;
 //	printf("\n%zu %zu\n", m, ft_count_hors_signe(nbr, base));
     if (t[2] > m && t[4] == 1)
-		ft_fill_caract(s, t[2] - m, t, '0');
+		ft_fill_caract(s, t[2] - m, t, ' ');
 }
 
 void			ft_countnbr_base(long nbr, char *base, size_t *t)
