@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 11:30:30 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 11:56:44 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,20 +101,17 @@ int			ft_printf(const char *format, ...)
 		ft_size(ap, format, len);
 		//len[1] = 5000;
 		va_end(ap);
-	}
-	else
-		len[1] = -1;
-	s = NULL;
+		s = NULL;
 //	printf("longeur totale : %zu\n", len[1]);
-	if (!(s = (char*)malloc(len[1])))
-		return (0);
-	if (len[0] != 0)
-	{
+		if (!(s = (char*)malloc(len[1])))
+			return (0);
 		va_start(ap, format);
 		ft_fill(s, ap, format);
 		va_end(ap);
+		ft_putstr(s);
+		free(s);
 	}
-	ft_putstr(s);
-	free(s);
+	else
+		ft_putstr((char*)format);
 	return (0);
 }
