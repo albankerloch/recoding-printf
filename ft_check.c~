@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 18:28:49 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 09:44:47 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ size_t			ft_checktaille_max(va_list ap, const char *format, size_t *i)
 {
 	size_t taille_max;
 
-	taille_max = 0;
+	taille_max = -2;
 	if (format[*i + 1] == '.')
 	{
 		*i = *i + 1;

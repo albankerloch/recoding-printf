@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 18:47:31 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 11:31:02 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int main()
 	t = 6;
 
 //   ft_printf("%3.5d \n", number);
-	printf("%010d \n", number);
-	ft_printf("%010d \n", number);
+//	   printf("truprintf |%-10.5d \n", number);
+//	ft_printf("ft_printf |%-10.5d \n", number);
 
-/*    ft_printf(" %-10d \n", number);
+    ft_printf(" %-10d \n", number);
     ft_printf(" %010d \n", number);
     ft_printf(" %-010d \n", number);
     ft_printf(" %0-10d \n", number);
@@ -42,7 +42,7 @@ int main()
 	//max = 0
 	t = 300;
 	ft_printf(" %20.*d \n", t, number);
-*/
+
 /*
 	char var1;
 

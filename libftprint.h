@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:38:07 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 16:46:40 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 10:03:14 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void 	ft_fill_caract(char *s, size_t max, size_t *t, char c);
 size_t	ft_checktaille_max(va_list ap, const char *format, size_t *i);
 size_t 	ft_checktaille_min(va_list ap, const char *format, size_t *i);
 size_t	ft_checkflag1(const char *format, size_t *i);
+size_t  ft_max(size_t n1, size_t n2);
 size_t	ft_count_hors_signe(long nbr, char *base);
 size_t 	ft_count_yc_signe(long nbr, char *base);
 int		ft_isdigit(int i);
