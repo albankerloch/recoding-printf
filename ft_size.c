@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/15 16:49:43 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 18:50:43 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ static void	ft_parsing_size(va_list ap, const char *format, size_t *t)
 	conv = format[t[0] + 1];
 //	printf("\n %c %c %zu  %zu\n", option, conv, t[0], t[1]);
 	t[0] = t[0] + 2;
-    if (conv == 's')
-        ft_count_s(ap, t);
-    else if (conv == 'c')
-        ft_count_c(ap, t);
-    else if (conv == 'p')
-        ft_count_p(ap, t);
-    else
+	if (conv == 's')
+		ft_count_s(ap, t);
+	else if (conv == 'c')
+		ft_count_c(ap, t);
+	else if (conv == 'p')
+		ft_count_p(ap, t);
+	else
 		ft_count_d(ap, t, conv);
 }
 
-void		 ft_size(va_list ap, const char *format, size_t *len)
+size_t		ft_size(va_list ap, const char *format)
 {
 	size_t t[4];
 
@@ -60,5 +60,5 @@ void		 ft_size(va_list ap, const char *format, size_t *len)
 		}
 	}
 	t[1]++;
-	len[1] = t[1];
+	return (t[1]);
 }

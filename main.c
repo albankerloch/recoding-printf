@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 18:18:34 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 18:45:17 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,13 @@ int main()
 
 	ft_printf("faux :%Z\n");
 	printf("vrai :%Z\n");
-*/
+
 	ft_printf("faux :%Z\n");
 	printf("vrai :%Z\n");
+*/
 
+	ft_printf(" %%\n");
+	printf(" %%\n");
 //	ft_printf("7faux :@moulitest: %.d %.0d\n", 0, 0);
 //	printf("7vrai :@moulitest: %.d %.0d\n", 0, 0);
 

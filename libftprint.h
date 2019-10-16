@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:38:07 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 15:45:34 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 19:11:36 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	ft_count_p(va_list ap, size_t *t);
 void	ft_count_c(va_list ap, size_t *t);
 void	ft_count_d(va_list ap, size_t *t, char conv);
 void    ft_countnbr_base(long nbr, char *base, size_t *t);
-void	ft_size(va_list ap, const char *format, size_t *len);
+size_t	ft_size(va_list ap, const char *format);
 void 	ft_fill_caract(char *s, size_t max, size_t *t, char c);
 size_t	ft_checktaille_max(va_list ap, const char *format, size_t *i);
 size_t 	ft_checktaille_min(va_list ap, const char *format, size_t *i);
 size_t	ft_checkflag1(const char *format, size_t *i);
 size_t  ft_max(size_t n1, size_t n2);
-size_t	ft_count_hors_signe(long nbr, char *base);
-size_t 	ft_count_yc_signe(long nbr, char *base);
+size_t	ft_ch(long nbr, char *base);
+size_t 	ft_cy(long nbr, char *base);
 int		ft_isdigit(int i);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
@@ -46,5 +46,6 @@ char	*ft_strchr(const char *str, int c);
 size_t	ft_strinsert(char *dest, const char *src, size_t size);
 char	*ft_strdup(const char *src);
 void	ft_putnbr_base(char *s, long nbr, char *base, size_t *t);
+void	ft_fill_left(char *s, long nbr, char *base, size_t *t);
 
 #endif

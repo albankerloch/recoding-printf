@@ -82,7 +82,7 @@ void		ft_write_p(char *s, va_list ap, size_t *t)
 	s[t[1]] = '0';
 	s[t[1] + 1] = 'x';
 	t[1] = t[1] + 1;
-	ft_fill_left(s, (long)var1, "0123456789abcdef", t);
+	ft_putnbr_base(s, (long)var1, "0123456789abcdef", t);
 }
 
 void		ft_write_d(char *s, va_list ap, size_t *t, char conv)
@@ -96,15 +96,15 @@ void		ft_write_d(char *s, va_list ap, size_t *t, char conv)
 //	printf("\n %d %zu %zu %zu %zu \n", var1, t[1], t[0], ft_count_yc_signe(var1, "0123456789"), ft_count_hors_signe(var1, "0123456789"));
 //	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
 	if (conv == 'u' && var1 < 0)
-		ft_fill_left(s, var2, "0123456789", t);
+		ft_putnbr_base(s, var2, "0123456789", t);
 	if (conv == 'i' || conv == 'd' || (conv == 'u' && var1 >= 0))
-		ft_fill_left(s, var1, "0123456789", t);
+		ft_putnbr_base(s, var1, "0123456789", t);
 	if (conv == 'x' && var1 >= 0)
-		ft_fill_left(s, var1, "0123456789abcdef", t);
+		ft_putnbr_base(s, var1, "0123456789abcdef", t);
 	if (conv == 'X' && var1 >= 0)
-		ft_fill_left(s, var1, "0123456789ABCDEF", t);
+		ft_putnbr_base(s, var1, "0123456789ABCDEF", t);
 	if (conv == 'x' && var1 < 0)
-		ft_fill_left(s, var2, "0123456789abcdef", t);
+		ft_putnbr_base(s, var2, "0123456789abcdef", t);
 	if (conv == 'X' && var1 < 0)
-		ft_fill_left(s, var2, "0123456789ABCDEF", t);
+		ft_putnbr_base(s, var2, "0123456789ABCDEF", t);
 }
