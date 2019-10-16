@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:38:07 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 11:51:38 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:00:31 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 void	ft_fill_caract(char *s, size_t max, size_t *t, char c);
 void	ft_write_s(char *s, va_list ap, size_t *t);
 void	ft_write_p(char *s, va_list ap, size_t *t);
+void    ft_write_prct(char *s, size_t *t);
 void	ft_write_c(char *s, va_list ap, size_t *t);
 void	ft_write_d(char *s, va_list ap, size_t *t, char conv);
 void	ft_count_s(va_list ap, size_t *t);

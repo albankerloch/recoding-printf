@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 12:29:52 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:21:44 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,41 @@
 
 int main()
 {
-//	char *var1;
+/*	char *var1;
 
-//	var1 = NULL;
+	var1 = test;
 
+	printf("vrai : %.0%\n");
+	ft_printf("faux : %.0%\n");
+
+	printf("vrai :%%\n", "test");
+	ft_printf("faux :%%\n", "test");
+
+	printf("%%\n");
+	ft_printf("%%\n");
+
+	printf("%5%\n");
+	ft_printf("%5%\n");
+
+	printf("%.0%\n");
+	ft_printf("%.0%\n");
+
+	printf("%%\n", "test");
+	ft_printf("%%\n", "test");
+*/
+
+	printf("vrai :%.2c\n", NULL);
+	ft_printf("faux :%.2c\n", NULL);
 
 //	printf("truprintf |%s \n", var1);
-//	printf("%zu\n", ft_strlen(var1));
-
+//	ft_printf("ft_printf |%s \n", var1);
 
 	int number;
 	int t;
 
 	number = -17;
 	t = 6;
-
+/*
 //	   printf("truprintf |%-10.5d \n", number);
 //	ft_printf("ft_printf |%-10.5d \n", number);
 
@@ -108,6 +128,6 @@ int main()
 	ft_printf("-1 %-*.*s-- %% fin\n", 0, 5, var1);
 	ft_printf("-1 %-*.*s-- %% fin\n", 0, 0, var1);
 	ft_printf("-1 %-*.*s-- %% fin\n", 7, 7, var1);
-
+*/
 	return (0);
 }

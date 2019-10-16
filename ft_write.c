@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 12:26:54 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:21:25 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,24 @@ void		ft_write_c(char *s, va_list ap, size_t *t)
 	var1 = (char)va_arg(ap, int);
 	if (t[2] > 0 && t[4] != 1)
 		ft_fill_caract(s, t[2] - 1, t, (t[4] == 2 ? '0' : ' '));
-	s[t[1]] = var1;
+	if (!(var1))
+	{
+		s[t[1]] = '^';
+		t[1]++;
+		s[t[1]] = '@';
+	}
+	else
+		s[t[1]] = var1;
+	t[1]++;
+	if (t[2] > 0 && t[4] == 1)
+		ft_fill_caract(s, t[2] - 1, t, ' ');
+}
+
+void		ft_write_prct(char *s, size_t *t)
+{
+	if (t[2] > 0 && t[4] != 1)
+		ft_fill_caract(s, t[2] - 1, t, (t[4] == 2 ? '0' : ' '));
+	s[t[1]] = '%';
 	t[1]++;
 	if (t[2] > 0 && t[4] == 1)
 		ft_fill_caract(s, t[2] - 1, t, ' ');
