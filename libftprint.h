@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:38:07 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 10:03:14 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 11:51:38 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,5 @@ char	*ft_strchr(const char *str, int c);
 size_t	ft_strinsert(char *dest, const char *src, size_t size);
 char	*ft_strdup(const char *src);
 void	ft_putnbr_base(char *s, long nbr, char *base, size_t *t);
-
 
 #endif

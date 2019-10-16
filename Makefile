@@ -3,6 +3,7 @@ SRCS = ft_printf.c \
 	ft_size.c \
 	ft_putnbr_base.c \
 	ft_count.c \
+	ft_write.c \
 	ft_check.c \
 	ft_atoi.c \
 	ft_putstr.c \
