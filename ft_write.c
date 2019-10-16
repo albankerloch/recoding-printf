@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 17:23:26 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:31:01 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,12 @@ void		ft_write_d(char *s, va_list ap, size_t *t, char conv)
 			ft_putnbr_base(s, var2, "0123456789", t);
 	if (conv == 'i' || conv == 'd' || (conv == 'u' && var1 >= 0))
 		ft_putnbr_base(s, var1, "0123456789", t);
-	if (conv == 'x')
+	if (conv == 'x' && var1 >= 0)
 		ft_putnbr_base(s, var1, "0123456789abcdef", t);
-	if (conv == 'X')
+	if (conv == 'X' && var1 >= 0)
 		ft_putnbr_base(s, var1, "0123456789ABCDEF", t);
+	if (conv == 'x' && var1 < 0)
+		ft_putnbr_base(s, var2, "0123456789abcdef", t);
+	if (conv == 'X' && var1 < 0)
+		ft_putnbr_base(s, var2, "0123456789ABCDEF", t);
 }

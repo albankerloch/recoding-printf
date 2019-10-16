@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 16:35:02 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 18:02:48 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,29 @@ int main()
 	ft_printf("8vrai :@moulitest: %.u %.1u\n", 1, 0);
 	ft_printf("9xvrai :@moulitest: %x %x %.x\n", 1, 0, 0);
 	ft_printf("10xvrai :@moulitest: %i %i %.i\n", 1, 0, 0);
-*/
 
-	ft_printf("7faux :@moulitest: %.d %.0d\n", 0, 0);
-	printf("7vrai :@moulitest: %.d %.0d"\n", 0, 0);
+	ft_printf("faux :%u\n", -2);
+	ft_printf("faux :%u\n", 4294967295);
+	printf("vrai :%u\n", -2);
+	printf("vrai :%u\n", 4294967295);
+
+	ft_printf("faux :%x\n", -42);
+	ft_printf("faux :%x\n", 4294967254);
+	printf("vrai :%x\n", -42);
+	printf("vrai :%x\n", 4294967254);
+*/
+/*
+	ft_printf("faux :% Z\n");
+	printf("vrai :% Z\n");
+
+	ft_printf("faux :%Z\n");
+	printf("vrai :%Z\n");
+*/
+	ft_printf("faux :%Z%\n");
+	//printf("vrai :%Z%\n");
+
+//	ft_printf("7faux :@moulitest: %.d %.0d\n", 0, 0);
+//	printf("7vrai :@moulitest: %.d %.0d\n", 0, 0);
 
 //	ft_printf(" --- \n");
 //	printf("vrai :@moulitest: %5.d %5.0d\n", 0, 0);
