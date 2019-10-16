@@ -6,7 +6,7 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 08:49:04 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 11:29:04 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 16:39:21 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,16 @@ void			ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 		ft_fill_caract(s, t[2] - ft_count_yc_signe(nbr, base), t, '0');
 	if (ft_max(t[3], 0) > ft_count_hors_signe(nbr, base))
 		ft_fill_caract(s, t[3] - ft_count_hors_signe(nbr, base), t, '0');
-	ft_wbase(l, base, s, t);
+	if (!(nbr == 0 && t[3] == 0))
+		ft_wbase(l, base, s, t);
+	else
+	{
+		if (t[2] > 0)
+		{
+			s[t[1]] = ' ';
+			t[1] = t[1] + 1;
+		}
+	}
 	if (t[2] > ft_max(t[3] + sign, ft_count_yc_signe(nbr, base)) && t[4] == 1)
 		ft_fill_caract(s, t[2] - ft_max(t[3] + sign, ft_count_yc_signe(nbr, base)), t, ' ');
 }

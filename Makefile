@@ -6,7 +6,7 @@ SRCS = ft_printf.c \
 	ft_write.c \
 	ft_check.c \
 	ft_atoi.c \
-	ft_putstr.c \
+	ft_putstr_n.c \
 	ft_isdigit.c \
 	ft_strlen.c
 OBJS = ${SRCS:.c=.o}

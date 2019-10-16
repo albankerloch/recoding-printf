@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 15:07:18 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:45:57 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,12 @@ int			ft_printf(const char *format, ...)
 		va_start(ap, format);
 		ft_fill(s, ap, format, t);
 		va_end(ap);
-		ft_putstr(s);
+		ft_putstr_n(s, (int)t[1]);
 		free(s);
 	}
 	else
 	{
-		ft_putstr((char*)format);
+		ft_putstr_n((char*)format, ft_strlen(format));
 		return ((int)ft_strlen(format));
 	}
 	return ((int)t[1]);

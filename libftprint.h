@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:38:07 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 15:00:31 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:45:34 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_isdigit(int i);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
 int		ft_printf(const char *format, ...);
-void    ft_putstr(char *s);
+void    ft_putstr_n(char *s, int i);
 char	*ft_strchr(const char *str, int c);
 size_t	ft_strinsert(char *dest, const char *src, size_t size);
 char	*ft_strdup(const char *src);

@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 15:21:44 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:02:38 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,53 @@ int main()
 
 	printf("%%\n", "test");
 	ft_printf("%%\n", "test");
+
+	printf("vrai :%.2c essai\n", NULL);
+	ft_printf("faux :%.2c essai\n", NULL);
+
+	printf("vrai :%10s essai\n", NULL);
+	ft_printf("faux :%10s essai\n", NULL);
+
+
+	ft_printf("faux :@moulitest: %d %d\n", 0, 0);
+
+	ft_printf("2vrai :@moulitest: %.d %.0d\n", 0, 0);
+	ft_printf("3vrai :@moulitest: %.d %.0d\n", 1, -5);
+	ft_printf("4vrai :@moulitest: %.1d %.5d\n", 0, 0);
+	ft_printf("5faux :@moulitest: %.d %.0d\n", 0, 0);
+	ft_printf("6vrai :@moulitest: %.d\n", 0, 0);
+	ft_printf("7vrai :@moulitest: %5.i\n", 0, 0);
+	ft_printf("8vrai :@moulitest: %.u %.1u\n", 1, 0);
+	ft_printf("9xvrai :@moulitest: %x %x %.x\n", 1, 0, 0);
+	ft_printf("10xvrai :@moulitest: %i %i %.i\n", 1, 0, 0);
 */
 
-	printf("vrai :%.2c\n", NULL);
-	ft_printf("faux :%.2c\n", NULL);
+	ft_printf("faux :%u\n", -2);
+	ft_printf("faux :%u\n", 4294967295);
+	printf("vrai :%u\n", -2);
+	printf("vrai :%u\n", 4294967295);
+	
+	
+
+//	ft_printf("7faux :@moulitest: %.d %.0d\n", 0, 0);
+//	printf("7vrai :@moulitest: %.d %.0d\n", 0, 0);
+
+//	ft_printf(" --- \n");
+//	printf("vrai :@moulitest: %5.d %5.0d\n", 0, 0);
+//	printf("vrai :@moulitest: %1.0d %1.1d\n", 0, 0);
+//	ft_printf("faux :@moulitest: %5.d %5.0d\n", 0, 0);
+//	ft_printf("faux :@moulitest: %.d %.0d\n", 0, 0);
+
 
 //	printf("truprintf |%s \n", var1);
 //	ft_printf("ft_printf |%s \n", var1);
 
-	int number;
+/*	int number;
 	int t;
 
 	number = -17;
 	t = 6;
-/*
+
 //	   printf("truprintf |%-10.5d \n", number);
 //	ft_printf("ft_printf |%-10.5d \n", number);
 
