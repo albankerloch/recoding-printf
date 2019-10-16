@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 11:58:34 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 12:07:45 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ int main()
 {
 	char *var1;
 
-	var1 = "3";
+	var1 = NULL;
 
 //	   printf("truprintf |s \n");
 //	ft_printf("ft_printf |s \n");
 
-	   printf(" asdasdsa asdsad");
-	ft_printf(" asdasdsa asdsad");
+	printf("truprintf |%s \n", var1);
+//	printf("%zu\n", ft_strlen(var1));
+	ft_printf("ft_printf |%s \n", var1);
 
 /*
 	int number;

@@ -6,11 +6,11 @@
 /*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 19:55:49 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/07 16:39:58 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:12:58 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprint.h"
 
 size_t	ft_strlen(const char *str)
 {
