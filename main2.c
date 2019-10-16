@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 11:31:02 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 12:29:52 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,21 @@
 
 int main()
 {
+//	char *var1;
+
+//	var1 = NULL;
+
+
+//	printf("truprintf |%s \n", var1);
+//	printf("%zu\n", ft_strlen(var1));
+
+
 	int number;
 	int t;
 
 	number = -17;
 	t = 6;
 
-//   printf("%3.5d \n", number);
 //	   printf("truprintf |%-10.5d \n", number);
 //	printf("printf |%-10.5d \n", number);
 
@@ -43,40 +51,43 @@ int main()
 	t = 300;
 	printf(" %20.*d \n", t, number);
 
-/*
-	char var1;
 
-	var1 = '3';
+
+	char var;
+
+	var = '3';
 
 //test char
-	printf("012%*.*c56789\n", 20, 20, var1);
-	printf("-1 %*.*c-- %% fin\n", 7, 5, var1);
-	printf("-1 %*.*c-- %% fin\n", 7, 10, var1);
-	printf("-1 %*.*c-- %% fin\n", 0, 5, var1);
-	printf("-1 %*.*c-- %% fin\n", 0, 0, var1);
-	printf("-1 %*.*c-- %% fin\n", 7, 7, var1);
+	printf("012%*.*c56789\n", 20, 20, var);
+	printf("-1 %*.*c-- %% fin\n", 7, 5, var);
+	printf("-1 %*.*c-- %% fin\n", 7, 10, var);
+	printf("-1 %*.*c-- %% fin\n", 0, 5, var);
+	printf("-1 %*.*c-- %% fin\n", 0, 0, var);
+	printf("-1 %*.*c-- %% fin\n", 7, 7, var);
 	
 //test flag -
-	printf("-1 %0*.*c-- %% fin\n", 7, 3, var1);
-	printf("-1 %0*.*c-- %% fin\n", 7, 5, var1);
-	printf("-1 %0*.*c-- %% fin\n", 7, 10, var1);
-	printf("-1 %0*.*c-- %% fin\n", 0, 5, var1);
-	printf("-1 %0*.*c-- %% fin\n", 0, 0, var1);
-	printf("-1 %0*.*c-- %% fin\n", 7, 7, var1);
+	printf("-1 %0*.*c-- %% fin\n", 7, 3, var);
+	printf("-1 %0*.*c-- %% fin\n", 7, 5, var);
+	printf("-1 %0*.*c-- %% fin\n", 7, 10, var);
+	printf("-1 %0*.*c-- %% fin\n", 0, 5, var);
+	printf("-1 %0*.*c-- %% fin\n", 0, 0, var);
+	printf("-1 %0*.*c-- %% fin\n", 7, 7, var);
 
 //test flag 0
-	printf("-1 %-*.*c-- %% fin\n", 7, 3, var1);
-	printf("-1 %-*.*c-- %% fin\n", 7, 5, var1);
-	printf("-1 %-*.*c-- %% fin\n", 7, 10, var1);
-	printf("-1 %-*.*c-- %% fin\n", 0, 5, var1);
-	printf("-1 %-*.*c-- %% fin\n", 0, 0, var1);
-	printf("-1 %-*.*c-- %% fin\n", 7, 7, var1);
-*/
-/*
+	printf("-1 %-*.*c-- %% fin\n", 7, 3, var);
+	printf("-1 %-*.*c-- %% fin\n", 7, 5, var);
+	printf("-1 %-*.*c-- %% fin\n", 7, 10, var);
+	printf("-1 %-*.*c-- %% fin\n", 0, 5, var);
+	printf("-1 %-*.*c-- %% fin\n", 0, 0, var);
+	printf("-1 %-*.*c-- %% fin\n", 7, 7, var);
+
+
 	char var1[10]="test";
 	char var2[10]="vvvv";
 	char var3[10]="vemt";
 
+	printf("printf |%s \n", var1);
+	printf("printf |s \n");
 	printf("-1 %*.*s-- %% fin\n", 7, 3, var1);
 	printf("-1 %*.*s-- %% fin\n", 7, 5, var1);
 	printf("-1 %*.*s-- %% fin\n", 7, 10, var1);
@@ -97,6 +108,6 @@ int main()
 	printf("-1 %-*.*s-- %% fin\n", 0, 5, var1);
 	printf("-1 %-*.*s-- %% fin\n", 0, 0, var1);
 	printf("-1 %-*.*s-- %% fin\n", 7, 7, var1);
-*/
+
 	return (0);
 }

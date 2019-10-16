@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 12:07:45 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/16 12:29:52 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,15 @@
 
 int main()
 {
-	char *var1;
+//	char *var1;
 
-	var1 = NULL;
+//	var1 = NULL;
 
-//	   printf("truprintf |s \n");
-//	ft_printf("ft_printf |s \n");
 
-	printf("truprintf |%s \n", var1);
+//	printf("truprintf |%s \n", var1);
 //	printf("%zu\n", ft_strlen(var1));
-	ft_printf("ft_printf |%s \n", var1);
 
-/*
+
 	int number;
 	int t;
 
@@ -54,41 +51,43 @@ int main()
 	t = 300;
 	ft_printf(" %20.*d \n", t, number);
 
-*/
-/*
-	char var1;
 
-	var1 = '3';
+
+	char var;
+
+	var = '3';
 
 //test char
-	ft_printf("012%*.*c56789\n", 20, 20, var1);
-	ft_printf("-1 %*.*c-- %% fin\n", 7, 5, var1);
-	ft_printf("-1 %*.*c-- %% fin\n", 7, 10, var1);
-	ft_printf("-1 %*.*c-- %% fin\n", 0, 5, var1);
-	ft_printf("-1 %*.*c-- %% fin\n", 0, 0, var1);
-	ft_printf("-1 %*.*c-- %% fin\n", 7, 7, var1);
+	ft_printf("012%*.*c56789\n", 20, 20, var);
+	ft_printf("-1 %*.*c-- %% fin\n", 7, 5, var);
+	ft_printf("-1 %*.*c-- %% fin\n", 7, 10, var);
+	ft_printf("-1 %*.*c-- %% fin\n", 0, 5, var);
+	ft_printf("-1 %*.*c-- %% fin\n", 0, 0, var);
+	ft_printf("-1 %*.*c-- %% fin\n", 7, 7, var);
 	
 //test flag -
-	ft_printf("-1 %0*.*c-- %% fin\n", 7, 3, var1);
-	ft_printf("-1 %0*.*c-- %% fin\n", 7, 5, var1);
-	ft_printf("-1 %0*.*c-- %% fin\n", 7, 10, var1);
-	ft_printf("-1 %0*.*c-- %% fin\n", 0, 5, var1);
-	ft_printf("-1 %0*.*c-- %% fin\n", 0, 0, var1);
-	ft_printf("-1 %0*.*c-- %% fin\n", 7, 7, var1);
+	ft_printf("-1 %0*.*c-- %% fin\n", 7, 3, var);
+	ft_printf("-1 %0*.*c-- %% fin\n", 7, 5, var);
+	ft_printf("-1 %0*.*c-- %% fin\n", 7, 10, var);
+	ft_printf("-1 %0*.*c-- %% fin\n", 0, 5, var);
+	ft_printf("-1 %0*.*c-- %% fin\n", 0, 0, var);
+	ft_printf("-1 %0*.*c-- %% fin\n", 7, 7, var);
 
 //test flag 0
-	ft_printf("-1 %-*.*c-- %% fin\n", 7, 3, var1);
-	ft_printf("-1 %-*.*c-- %% fin\n", 7, 5, var1);
-	ft_printf("-1 %-*.*c-- %% fin\n", 7, 10, var1);
-	ft_printf("-1 %-*.*c-- %% fin\n", 0, 5, var1);
-	ft_printf("-1 %-*.*c-- %% fin\n", 0, 0, var1);
-	ft_printf("-1 %-*.*c-- %% fin\n", 7, 7, var1);
-*/
-/*
+	ft_printf("-1 %-*.*c-- %% fin\n", 7, 3, var);
+	ft_printf("-1 %-*.*c-- %% fin\n", 7, 5, var);
+	ft_printf("-1 %-*.*c-- %% fin\n", 7, 10, var);
+	ft_printf("-1 %-*.*c-- %% fin\n", 0, 5, var);
+	ft_printf("-1 %-*.*c-- %% fin\n", 0, 0, var);
+	ft_printf("-1 %-*.*c-- %% fin\n", 7, 7, var);
+
+
 	char var1[10]="test";
 	char var2[10]="vvvv";
 	char var3[10]="vemt";
 
+	ft_printf("printf |%s \n", var1);
+	ft_printf("printf |s \n");
 	ft_printf("-1 %*.*s-- %% fin\n", 7, 3, var1);
 	ft_printf("-1 %*.*s-- %% fin\n", 7, 5, var1);
 	ft_printf("-1 %*.*s-- %% fin\n", 7, 10, var1);
@@ -109,6 +108,6 @@ int main()
 	ft_printf("-1 %-*.*s-- %% fin\n", 0, 5, var1);
 	ft_printf("-1 %-*.*s-- %% fin\n", 0, 0, var1);
 	ft_printf("-1 %-*.*s-- %% fin\n", 7, 7, var1);
-*/
+
 	return (0);
 }
