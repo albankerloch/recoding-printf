@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_write.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 11:31:17 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 19:03:33 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/18 11:49:34 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/18 11:49:38 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprint.h"
-
-void		ft_fill_caract(char *s, size_t max, size_t *t, char c)
-{
-	size_t	k;
-
-	k = 0;
-	while (k < max)
-	{
-		k++;
-		s[t[1]] = c;
-		t[1]++;
-	}
-}
 
 void		ft_write_s(char *s, va_list ap, size_t *t)
 {
@@ -33,10 +20,8 @@ void		ft_write_s(char *s, va_list ap, size_t *t)
 
 	var1 = va_arg(ap, char*);
 	m = t[3] < ft_strlen(var1) ? t[3] : ft_strlen(var1);
-//	printf("\n -%s- %zu %zu %zu %zu\n", var1, t[4], t[2], t[3], t[2] - m);
 	if (t[2] > m && t[4] != 1)
 		ft_fill_caract(s, t[2] - m, t, (t[4] == 2 ? '0' : ' '));
-//	printf("\n -%s- %zu %zu %zu %zu\n", var1, ft_strlen(var1), t[2], t[3], t[2] - m);
 	if (!(var1))
 		var1 = "(null)";
 	k = 0;
@@ -78,7 +63,6 @@ void		ft_write_p(char *s, va_list ap, size_t *t)
 	void *var1;
 
 	var1 = va_arg(ap, void*);
-//	printf("\n -%p- %ld %zu %zu\n", var1, (long)var1, t[1], t[0]);
 	s[t[1]] = '0';
 	s[t[1] + 1] = 'x';
 	t[1] = t[1] + 1;
@@ -93,8 +77,6 @@ void		ft_write_d(char *s, va_list ap, size_t *t, char conv)
 	var1 = va_arg(ap, int);
 	if (var1 < 0)
 		var2 = (unsigned int)var1;
-//	printf("\n %d %zu %zu %zu %zu \n", var1, t[1], t[0], ft_count_yc_signe(var1, "0123456789"), ft_count_hors_signe(var1, "0123456789"));
-//	printf("\n -%s- %zu %zu\n", var1, t[1], t[0]);
 	if (conv == 'u' && var1 < 0)
 		ft_fill_left(s, var2, "0123456789", t);
 	if (conv == 'i' || conv == 'd' || (conv == 'u' && var1 >= 0))

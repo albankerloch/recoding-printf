@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 08:49:04 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 19:10:07 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/18 11:49:06 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/18 11:49:11 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprint.h"
-
-size_t			ft_max(size_t n1, size_t n2)
-{
-	size_t m;
-
-	m = -1;
-	if (n1 == m)
-		return (n2);
-	if (n2 == m)
-		return (n1);
-	if (n1 > n2)
-		return (n1);
-	return (n2);
-}
 
 size_t			ft_cy(long nbr, char *base)
 {
@@ -120,25 +106,4 @@ void			ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 	}
 	if (t[2] > ft_max(t[3] + si, ft_cy(nbr, base)) && t[4] == 1)
 		ft_fill_caract(s, t[2] - ft_max(t[3] + si, ft_cy(nbr, base)), t, ' ');
-}
-
-void			ft_countnbr_base(long nbr, char *base, size_t *t)
-{
-	size_t	sign;
-
-	sign = nbr < 0 ? 1 : 0;
-	if (t[2] > ft_max(t[3] + sign, ft_cy(nbr, base)) && t[4] == 0)
-		t[1] = t[1] + t[2] - ft_max(t[3] + sign, ft_cy(nbr, base));
-	if (t[2] > ft_max(t[3] + sign, ft_cy(nbr, base)) && t[4] == 2 &&
-t[3] != (size_t)-1)
-		t[1] = t[1] + t[2] - ft_max(t[3] + sign, ft_cy(nbr, base));
-	if (nbr < 0)
-		t[1] = t[1] + 1;
-	if (t[2] > ft_cy(nbr, base) && t[4] == 2 && t[3] == (size_t)-1)
-		t[1] = t[1] + t[2] - ft_cy(nbr, base);
-	if (ft_max(t[3], 0) > ft_ch(nbr, base))
-		t[1] = t[1] + t[3] - ft_ch(nbr, base);
-	t[1] = t[1] + ft_cy(nbr, base);
-	if (t[2] > ft_max(t[3] + sign, ft_cy(nbr, base)) && t[4] == 1)
-		t[1] = t[1] + t[2] - ft_max(t[3] + sign, ft_cy(nbr, base));
 }

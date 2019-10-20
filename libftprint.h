@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:38:07 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/17 21:30:01 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/18 11:42:29 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	ft_fill_caract(char *s, size_t max, size_t *t, char c);
 size_t	ft_checktaille_max(va_list ap, const char *format, size_t *i);
 size_t	ft_checktaille_min(va_list ap, const char *format, size_t *i);
 size_t	ft_checkflag1(const char *format, size_t *i);
-size_t	ft_max(size_t n1, size_t n2);
 size_t	ft_ch(long nbr, char *base);
 size_t	ft_cy(long nbr, char *base);
 int		ft_isdigit(int i);
+size_t	ft_max(size_t n1, size_t n2);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
 int		ft_printf(const char *format, ...);

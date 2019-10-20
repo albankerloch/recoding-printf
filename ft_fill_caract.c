@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_fill_caract.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akerloc- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 19:55:49 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/16 12:07:03 by akerloc-         ###   ########.fr       */
+/*   Created: 2019/10/18 11:50:11 by akerloc-          #+#    #+#             */
+/*   Updated: 2019/10/18 11:50:15 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprint.h"
 
-size_t	ft_strlen(const char *str)
+void		ft_fill_caract(char *s, size_t max, size_t *t, char c)
 {
-	int		a;
+	size_t	k;
 
-	a = 0;
-	if (!(str))
-		return (6);
-	while (str[a] != '\0')
+	k = 0;
+	while (k < max)
 	{
-		a++;
+		k++;
+		s[t[1]] = c;
+		t[1]++;
 	}
-	return (a);
 }
