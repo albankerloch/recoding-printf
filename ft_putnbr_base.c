@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:49:06 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/21 17:51:04 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:53:49 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t			ft_ch(long nbr, char *base)
 	{
 		t = -t;
 	}
-	while (t > ft_strlen(base))
+	while (t >= ft_strlen(base))
 	{
 		t = t / ft_strlen(base);
 		j++;
