@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/20 18:06:19 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:25:40 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,16 @@ int main()
 	a = 1;
 	p = &a;
 
+	printf("vrai : |%027.p|\n", p);
+	ft_printf("faux : |%027.p|\n", p);
 
-	printf("vrai : |%.*d|\n", -15, a);
-	ft_printf("faux : |%.*d|\n", -15, a);
+//	printf("1|%10.50.**--*dcsdp%d|\n", -25, -15, -5, -33, 4, 6, -4897987565423, 123);
+//	ft_printf("2|%10.50.**--*dcsdp%d|\n", -25, -15, -5, -33, 4, 6, -4897987565423, 123);
+
+//	ft_printf("1-%*d %*s, %*i\n", 10, 10, 5, "coucou", 4, 40);
+//	printf("2-%*d %*s, %*i\n", 10, 10, 5, "coucou", 4, 40);
+//printf("vrai : |%*.**s|\n", 10, 10, "ahaha");
+//	ft_printf("faux : |%*.**s|\n", 10, 10, "hahah");
 
 /*	printf("vrai : |%-7d|\n", a);
 	printf("vrai : |%-*d|\n", 7, a);
