@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:49:21 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/22 14:42:46 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:39:27 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void		ft_count_s(va_list ap, size_t *t)
 	if (t[2] > m && t[4] != 1)
 		t[1] = t[1] + t[2] - m;
 	k = 0;
-	if (!(var1))
-		var1 = "(null)";
+    if (!(var1))
+        var1 = "(null)";
 	while (k < ft_strlen(var1) && k < t[3])
 	{
 		t[1]++;

@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:48:52 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/20 17:19:38 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:06:04 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,22 @@ static void	ft_parsing_size(va_list ap, const char *format, size_t *t)
 	t[2] = ft_checktaille_min(ap, format, t);
 	t[3] = ft_checktaille_max(ap, format, t);
 	conv = format[t[0] + 1];
-	printf("%lu\n", t[3[ 
-	t[0] = t[0] + 2;
-	if (conv == 's')
-		ft_count_s(ap, t);
-	else if (conv == 'c')
-		ft_count_c(ap, t);
-	else if (conv == 'p')
-		ft_count_p(ap, t);
+    if (ft_isconv(conv, "cspdiuxX%"))
+    {
+		t[0] = t[0] + 2;
+		if (conv == 's')
+			ft_count_s(ap, t);
+		else if (conv == 'c')
+			ft_count_c(ap, t);
+		else if (conv == 'p')
+			ft_count_p(ap, t);
+		else if (conv == '%')
+			ft_count_prct(ap, t);
+		else
+			ft_count_d(ap, t, conv);
+	}
 	else
-		ft_count_d(ap, t, conv);
+		t[0] = t[0] + 1;
 }
 
 size_t		ft_size(va_list ap, const char *format)
@@ -47,13 +53,7 @@ size_t		ft_size(va_list ap, const char *format)
 		}
 		else
 		{
-			if (format[t[0] + 1] == '%')
-			{
-				t[1]++;
-				t[0] = t[0] + 2;
-			}
-			else
-				ft_parsing_size(ap, format, t);
+			ft_parsing_size(ap, format, t);
 		}
 	}
 	t[1]++;

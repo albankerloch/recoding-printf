@@ -6,13 +6,13 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:48:37 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/20 17:30:47 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:30:13 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprint.h"
 
-static int		ft_isconv(char conv, char *s)
+int				ft_isconv(char conv, char *s)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:49:34 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/21 17:54:31 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:14:01 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		ft_write_prct(char *s, size_t *t)
 
 void		ft_write_p(char *s, va_list ap, size_t *t)
 {
-	void *var1;
+	void			*var1;
 	unsigned int	var2;
 
 	var1 = va_arg(ap, void*);

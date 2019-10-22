@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:38:07 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/21 17:54:49 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:38:51 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
+int		ft_isconv(char conv, char *s);
 void	ft_fill_caract(char *s, size_t max, size_t *t, char c);
 void	ft_write_s(char *s, va_list ap, size_t *t);
 void	ft_write_p(char *s, va_list ap, size_t *t);
@@ -27,8 +28,10 @@ void	ft_write_d(char *s, va_list ap, size_t *t, char conv);
 void	ft_count_s(va_list ap, size_t *t);
 void	ft_count_p(va_list ap, size_t *t);
 void	ft_count_c(va_list ap, size_t *t);
+void	ft_count_prct(size_t *t);
 void	ft_count_d(va_list ap, size_t *t, char conv);
 void	ft_countnbr_base(long nbr, char *base, size_t *t);
+void	ft_countnbr_base_p(long nbr, char *base, size_t *t);
 size_t	ft_size(va_list ap, const char *format);
 void	ft_fill_caract(char *s, size_t max, size_t *t, char c);
 size_t	ft_checktaille_max(va_list ap, const char *format, size_t *i);

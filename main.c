@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:44:18 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/21 18:54:00 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/22 13:53:50 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int main()
 	a = 1;
 	p = &a;
 
-	printf("vrai : %5d\n", 10);
+
+	printf("vrai : |%*d|\n", -10, 40);
+	ft_printf("faux : |%*d|\n", -10, 40);
+
+/*	printf("vrai : %5d\n", 10);
 	ft_printf("faux : %5d\n", 10);
 
 	printf("vrai : %10d %10s, %5i\n", 100, "coucou", 40);
@@ -30,7 +34,7 @@ int main()
 
 	printf("vrai : %5d\n", 40);
 	ft_printf("faux : %5d\n", 40);
-
+*/
 //	printf("vrai : %*d %*s, %*i\n", 10, 10, 5, "coucou", 4, 40);
 //	ft_printf("faux : %*d %*s, %*i\n", 10, 10, 5, "coucou", 4, 40);
 
