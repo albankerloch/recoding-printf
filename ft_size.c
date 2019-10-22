@@ -6,7 +6,7 @@
 /*   By: akerloc- <akerloc-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:48:52 by akerloc-          #+#    #+#             */
-/*   Updated: 2019/10/22 14:41:43 by akerloc-         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:26:53 by akerloc-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_parsing_size(va_list ap, const char *format, size_t *t)
 		else if (conv == 'p')
 			ft_count_p(ap, t);
 		else if (conv == '%')
-			ft_count_prct(ap, t);
+			ft_count_prct(t);
 		else
 			ft_count_d(ap, t, conv);
 	}
