@@ -1,14 +1,5 @@
-#include "libftprint.h"
-# include <stdio.h>
-
-
-
-int main() {
-    int i;
-    i = 0;
-
-	char string[] = "string";
-
+/* updated: 19/10/2019 */
+/* main3.c by alban kerloc'h */
 	void *ptr_1;
 	char *ptr_2;
 	int  *ptr_3;
