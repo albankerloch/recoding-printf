@@ -16,7 +16,7 @@ OBJS = ${SRCS:.c=.o}
 NAME = libftprintf.a
 HEADER = .
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c -I ${HEADER} 
+CFLAGS = -c -I ${HEADER} 
 
 all : ${NAME}	
 
