@@ -34,8 +34,8 @@ make
 - Add #include "libftprint.h" in a C file (like in main.c)
 
 ```bash
-./btester
-./btester2
+gcc main.c -L. -lftprintf -o a.out
+sh ./tester.sh
 ```
 
 #### Author : Alban Kerloc'h
