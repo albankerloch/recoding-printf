@@ -1,8 +1,18 @@
-/* updated: 19/10/2019 */
-/* ft_strdup.c by alban kerloc'h */
+/**
+ * @file ft_strdup.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #include "libft.h"
 
+/**
+ * @brief Replication of the strcpy function
+ * @param dest: a pointer to the begining of a string
+ * @param src: a string
+ * @return a pointer to the string copied from src
+ */
 static char	*ft_strcpy(char *dest, const char *src)
 {
 	int i;
@@ -17,6 +27,11 @@ static char	*ft_strcpy(char *dest, const char *src)
 	return (dest);
 }
 
+/**
+ * @brief Replication of the strdup function
+ * @param src: one string
+ * @return a string allocated in memory
+ */
 char		*ft_strdup(const char *src)
 {
 	char *s;

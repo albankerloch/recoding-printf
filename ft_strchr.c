@@ -1,8 +1,18 @@
-/* updated: 19/10/2019 */
-/* ft_strchr.c by alban kerloc'h */
+/**
+ * @file ft_strchr.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #include "libft.h"
 
+/**
+ * @brief Replication of the strchr function
+ * @param str: one string
+ * @param c: one character (unsigned char)
+ * @return a pointer to the first occurence of the character in the string (so a new string)
+ */
 char	*ft_strchr(const char *str, int c)
 {
 	int		i;

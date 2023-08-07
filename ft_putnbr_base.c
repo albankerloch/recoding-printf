@@ -1,8 +1,18 @@
-/* updated: 19/10/2019 */
-/* ft_putnbr_base.c by alban kerloc'h */
+/**
+ * @file ft_putnbr_base.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #include "libftprint.h"
 
+/**
+ * @brief Calculation of a number of characters needed for printing a given number
+ * @param nbr: a number
+ * @param base: a string representing the numbering system
+ * @return the number of characters needed for printing
+ */
 size_t			ft_cy(long nbr, char *base)
 {
 	if (nbr < 0)
@@ -10,6 +20,12 @@ size_t			ft_cy(long nbr, char *base)
 	return (ft_ch(nbr, base));
 }
 
+/**
+ * @brief Calculation of a number of digit
+ * @param nbr: a number
+ * @param base: a string representing the numbering system
+ * @return the number of digit
+ */
 size_t			ft_ch(long nbr, char *base)
 {
 	size_t		j;
@@ -29,6 +45,13 @@ size_t			ft_ch(long nbr, char *base)
 	return (j);
 }
 
+/**
+ * @brief Affect a number to an allocated in a certain numbering
+ * @param n: number
+ * @param base: a string representing the numbering system
+ * @param t: counter structure
+ * @return 
+ */
 void			ft_wbase(long n, char *base, char *s, size_t *t)
 {
 	long	c;
@@ -54,6 +77,14 @@ void			ft_wbase(long n, char *base, char *s, size_t *t)
 	}
 }
 
+/**
+ * @brief Manage length and precision specifier before a number replacement
+ * @param s: string (allocated in memory)
+ * @param nbr: the number
+ * @param base: a string representing the numbering system
+ * @param t: counter structure
+ * @return 
+ */
 void			ft_fill_left(char *s, long nbr, char *base, size_t *t)
 {
 	size_t		si;
@@ -76,6 +107,14 @@ t[3] != (size_t)-1)
 	ft_putnbr_base(s, nbr, base, t);
 }
 
+/**
+ * @brief Manage the sign before a number replacement
+ * @param s: string (allocated in memory)
+ * @param nbr: the number
+ * @param base: a string representing the numbering system
+ * @param t: counter structure
+ * @return 
+ */
 void			ft_putnbr_base(char *s, long nbr, char *base, size_t *t)
 {
 	long long	l;

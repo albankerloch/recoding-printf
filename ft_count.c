@@ -1,8 +1,17 @@
-/* updated: 19/10/2019 */
-/* ft_count.c by alban kerloc'h */
+/**
+ * @file ft_count.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #include "libftprint.h"
 
+/**
+ * @brief Calculation of the length of a string replacement
+ * @param ap: va_list
+ * @param t: counter structure
+ */
 void		ft_count_s(va_list ap, size_t *t)
 {
 	char	*var1;
@@ -27,6 +36,11 @@ void		ft_count_s(va_list ap, size_t *t)
 		t[1] = t[1] + t[2] - m;
 }
 
+/**
+ * @brief Calculation of the length of a char replacement
+ * @param ap: va_list
+ * @param t: counter structure
+ */
 void		ft_count_c(va_list ap, size_t *t)
 {
 	char	var1;
@@ -39,6 +53,11 @@ void		ft_count_c(va_list ap, size_t *t)
 		t[1] = t[1] + t[2] - 1;
 }
 
+/**
+ * @brief Calculation of the length of a replacement by a literal %
+ * @param ap: va_list
+ * @param t: counter structure
+ */
 void		ft_count_prct(size_t *t)
 {
 	if (t[2] > 0 && t[4] != 1)
@@ -48,6 +67,11 @@ void		ft_count_prct(size_t *t)
 		t[1] = t[1] + t[2] - 1;
 }
 
+/**
+ * @brief Calculation of the length of a pointer replacement
+ * @param ap: va_list
+ * @param t: counter structure
+ */
 void		ft_count_p(va_list ap, size_t *t)
 {
 	void			*var1;
@@ -65,6 +89,11 @@ void		ft_count_p(va_list ap, size_t *t)
 	}
 }
 
+/**
+ * @brief Calculation of the length of a diuxX replacement
+ * @param ap: va_list
+ * @param t: counter structure
+ */
 void		ft_count_d(va_list ap, size_t *t, char conv)
 {
 	int				var1;

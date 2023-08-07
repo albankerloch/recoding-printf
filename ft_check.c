@@ -1,8 +1,19 @@
-/* updated: 19/10/2019 */
-/* ft_check.c by alban kerloc'h */
+/**
+ * @file ft_check.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #include "libftprint.h"
 
+/**
+ * @brief Determination of the flag 1
+ * @param format: string
+ * @param i: counter structure
+ * @retval 1 if 
+ * @retval 2 if 
+ */
 size_t			ft_checkflag1(const char *format, size_t *i)
 {
 	size_t option;
@@ -19,6 +30,13 @@ size_t			ft_checkflag1(const char *format, size_t *i)
 	return (option);
 }
 
+/**
+ * @brief Determination of the precision specifier of the conversion
+ * @param ap: va_list
+ * @param format: string
+ * @param i: counter structure
+ * @return the value of the precision specifier (0 if there is no precision specifier)
+ */
 size_t			ft_checktaille_min(va_list ap, const char *format, size_t *i)
 {
 	size_t	var1;
@@ -45,6 +63,13 @@ size_t			ft_checktaille_min(va_list ap, const char *format, size_t *i)
 	return (0);
 }
 
+/**
+ * @brief Determination of the length specifier of the conversion
+ * @param ap: va_list
+ * @param format: string
+ * @param i: counter structure
+ * @return the value of length specifier (0 if there is no precision specifier)
+ */
 size_t			ft_checktaille_max(va_list ap, const char *format, size_t *i)
 {
 	size_t	taille_max;

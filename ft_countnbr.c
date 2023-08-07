@@ -1,8 +1,18 @@
-/* updated: 19/10/2019 */
-/* ft_countnbr.c by alban kerloc'h */
+/**
+ * @file ft_countnbr.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #include "libftprint.h"
 
+/**
+ * @brief Calculation of the length needed for a number replacement
+ * @param nbr: number
+ * @param base: a string representing the numbering system
+ * @param t: counter structure
+ */
 void		ft_countnbr_base(long nbr, char *base, size_t *t)
 {
 	size_t	sign;
@@ -24,6 +34,12 @@ void		ft_countnbr_base(long nbr, char *base, size_t *t)
 		t[1] = t[1] + t[2] - ft_max(t[3] + sign, ft_cy(nbr, base));
 }
 
+/**
+ * @brief Calculation of the length needed for a memory address replacement
+ * @param nbr: number
+ * @param base: a string representing the numbering system
+ * @param t: counter structure
+ */
 void		ft_countnbr_base_p(long nbr, char *base, size_t *t)
 {
 	if (t[2] > ft_max(t[3], ft_cy(nbr, base)) + 2 && t[4] != 1)

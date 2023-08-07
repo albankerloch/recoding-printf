@@ -1,9 +1,14 @@
-/* updated: 19/10/2019 */
-/* main.c by alban kerloc'h */
+/**
+ * @file main.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ * 
+ * A program to test the replication of the printf function
+ */
 
 #include "libftprint.h"
 #include <stdio.h>
-
 
 int main()
 {

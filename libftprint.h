@@ -1,5 +1,9 @@
-/* updated: 19/10/2019 */
-/* main.c by alban kerloc'h */
+/**
+ * @file libftprint.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #ifndef LIBFTPRINT_H
 # define LIBFTPRINT_H
@@ -37,7 +41,6 @@ size_t	ft_strlen(const char *str);
 int		ft_printf(const char *format, ...);
 void	ft_putstr_n(char *s, int i);
 char	*ft_strchr(const char *str, int c);
-size_t	ft_strinsert(char *dest, const char *src, size_t size);
 char	*ft_strdup(const char *src);
 void	ft_putnbr_base(char *s, long nbr, char *base, size_t *t);
 void	ft_fill_left(char *s, long nbr, char *base, size_t *t);

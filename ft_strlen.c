@@ -1,8 +1,17 @@
-/* updated: 19/10/2019 */
-/* ft_strlen.c by alban kerloc'h */
+/**
+ * @file ft_strlen.c
+ * @author alban kerloc'h
+ * @date 19/10/2019
+ * @version 1.0
+ */
 
 #include "libftprint.h"
 
+/**
+ * @brief Replication of the strlen function
+ * @param str: a string
+ * @return the size of the string
+ */
 size_t	ft_strlen(const char *str)
 {
 	int		a;
