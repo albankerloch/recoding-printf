@@ -14,7 +14,7 @@ For pedagogical purposes, I redid the printf function for those conversions :
 
 Features:
 - Write on the terminal replacing the correct variable (ex: %c, 't')
-- Take the with and the precision in account (ex: %-5.2s is a string", "this" -> "th    is a string")
+- Take the with and the precision in account (ex: "%-5.2s is a string", "this" -> "th is a string")
 - Take order in account
 - No memory leak
 - No more than 25 lines for each function
