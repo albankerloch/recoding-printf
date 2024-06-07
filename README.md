@@ -1,4 +1,4 @@
-# Redoing printf
+# Recoding printf
 
 For pedagogical purposes, I redid the printf function for those conversions : 
 - c: char
